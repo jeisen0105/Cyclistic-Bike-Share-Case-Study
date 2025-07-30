@@ -55,7 +55,73 @@ conflict_prefer("filter", "dplyr")
 conflict_prefer("lag", "dplyr")
 ```
 
-uploaded it to R Studio to clean and manipulate further 
+I then uploaded the files to R Studio to clean and manipulate the data further.
+
+```r
+q1_2019 <- read_csv("Divvy_Trips_2019_Q1 - Divvy_Trips_2019_Q1.csv")
+q1_2020 <- read_csv("Divvy_Trips_2020_Q1 - Divvy_Trips_2020_Q1.csv")
+```
+
+Once I had both files on R studio I was able to wrangle both into a single file by renaming the collunns and converting data types to ensure they stack correctly. After stacking the data frames I then removed any inconsistencies between the two files. 
+
+```r
+# Rename columns to make them consistent with q1_2020
+(q1_2019 <- rename(q1_2019
+                   ,ride_id = trip_id
+                   ,rideable_type = bikeid
+                   ,started_at = start_time
+                   ,ended_at = end_time
+                   ,start_station_name = from_station_name
+                   ,start_station_id = from_station_id
+                   ,end_station_name = to_station_name
+                   ,end_station_id = to_station_id
+                   ,member_casual = usertype))
+
+# Inspect the dataframes and look for incongruencies
+str(q1_2019)
+str(q1_2020)
+
+# Convert ride_id and rideable_type to character so that they can stack correctly
+q1_2019 <-  mutate(q1_2019, ride_id = as.character(ride_id)
+                   ,rideable_type = as.character(rideable_type)) 
+
+# Stack individual quarter's data frames into one big data frame
+all_trips <- bind_rows(q1_2019, q1_2020)
+
+# Remove lat, long, birthyear, and gender fields as this data was dropped beginning in 2020
+all_trips <- all_trips %>%  
+  select(-c(start_lat, start_lng, end_lat, end_lng, birthyear, gender,  "tripduration"))
+```
+
+I then finished cleaning and adding the data in preperation of the analysis stage. 
+
+```r
+# Reassign to the desired values (using the current 2020 labels)
+all_trips <-  all_trips %>% 
+  mutate(member_casual = recode(member_casual,"Subscriber" = "member","Customer" = "casual"))
+
+# Add columns that list the date, month, day, and year of each ride: allowing you to aggregate ride data for each moth, day or year.
+all_trips$date <- as.Date(all_trips$started_at)
+all_trips$month <- format(as.Date(all_trips$date), "%m")
+all_trips$day <- format(as.Date(all_trips$date), "%d")
+all_trips$year <- format(as.Date(all_trips$date), "%Y")
+all_trips$day_of_week <- format(as.Date(all_trips$date), "%A")
+
+# Add a "ride_length" calculation to all_trips
+all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
+
+# Inspect the structure of the columns
+str(all_trips)
+
+# Convert "ride_length" from Factor to numeric
+is.factor(all_trips$ride_length)
+all_trips$ride_length <- as.numeric(as.character(all_trips$ride_length))
+is.numeric(all_trips$ride_length)
+
+# Remove "bad" data, the dataframe includes a few hundred entries when bikes were taken out of docks and checked for quality by Divvy or ride_length was negative
+# You will create a new version of the dataframe (v2) since data is being removed
+all_trips_v2 <- all_trips[!(all_trips$start_station_name == "HQ QR" | all_trips$ride_length<0),]
+```
 
 
 
