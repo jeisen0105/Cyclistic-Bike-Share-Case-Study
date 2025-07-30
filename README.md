@@ -18,7 +18,6 @@ In this hypothetical case study I am a junior data analyst wokring on the market
 
 When approaching the ask section it is vital to understand the buisness task and to consider key stakeholders. The buisness task or what we will be trying to solve is how annual members and casual riders use ciclystic bikes differentky. After we find these differences we will then be able to explore ideas on how the company can covert the casual riders into annual members. 
 
-
 ## Prepare
 
 ### Data Source
@@ -29,8 +28,20 @@ The data is public and can be used to investigate how different customer types a
 
 In order to determine wheither or not the data source is relaible, original, comprehensive, current and cited we will follow the ROCCC framwork. We know the data is reliable and original ebcause it contains accurate, complete and inbiased information on Cyclysitcs historicak bike trips which come from a prumary source. The data also contains all infmation neede to undestand the different ways annual and casual riders use Cyclistic bikes making it quite comprehensive. Adddionally because the data sources are provided publicially by Cyclistic it can be refrenced easily. Finally even though our data is 5-6 years old it is still young enough for our analysis. 
 
-### Data Information
+### Data Information and Organization
 
 Datasets for Q1 of 2019 and 2020 were downloaded from the cloud and stored on my harddrive. They were then imported into Google Drive to examine in Google sheets and then imported to R studio for processing. After pprocessing the data, it was finally exported to Tableau for vizualization
 
-Each data set includes months of January Debruary and March. 
+Each file includes the months of January February and March but use sevieral different column names. The different columns were edtied to match eachother in order to compare the two years. 
+
+## Process
+
+
+
+
+
+
+
+
+
+
