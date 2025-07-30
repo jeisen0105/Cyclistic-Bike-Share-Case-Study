@@ -40,11 +40,25 @@ When approaching the process stage its essential to purge the data ensuring accu
 
 ## Step 1: Combine and Explore Data
 
-I first opneed each .csv ans saved them to the appropriate subfolder in order to have a copy of the original data. After saving each .csv to the subfolder I imported the data to R Studio to clean and manipulate further. 
+I first opneed each .csv ans saved them to the appropriate subfolder in order to have a copy of the
+original data. After saving each .csv to the subfolder I imported the data and installed the necessary packages.
 
-'''r
-q1_2019 <- read_csv("Divvy_Trips_2019_Q1 - Divvy_Trips_2019_Q1.csv")
-q1_2020 <- read_csv("Divvy_Trips_2020_Q1 - Divvy_Trips_2020_Q1.csv")
+```r
+install.packages("tidyverse")
+library(tidyverse)  #helps wrangle data
+
+# Use the conflicted package to manage conflicts
+library(conflicted)
+
+# Set dplyr::filter and dplyr::lag as the default choices
+conflict_prefer("filter", "dplyr")
+conflict_prefer("lag", "dplyr")
+'''
+
+uploaded it to R Studio to clean and manipulate further 
+
+
+
 
 
 
