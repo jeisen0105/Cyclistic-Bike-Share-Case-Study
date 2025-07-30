@@ -42,9 +42,9 @@ When approaching the process stage its essential to purge the data ensuring accu
 
 I first opneed each .csv ans saved them to the appropriate subfolder in order to have a copy of the original data. After saving each .csv to the subfolder I imported the data to R Studio to clean and manipulate further. 
 
- "Divvy_Trips_2019_Q1.csv"
- "Divvy_Trips_2020_Q1.csv"
-
+'''r
+q1_2019 <- read_csv("Divvy_Trips_2019_Q1 - Divvy_Trips_2019_Q1.csv")
+q1_2020 <- read_csv("Divvy_Trips_2020_Q1 - Divvy_Trips_2020_Q1.csv")
 
 
 
