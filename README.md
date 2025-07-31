@@ -246,7 +246,7 @@ all_trips_v2 %>%
 14 member        Sat               59413             974.
 ```
 
-### Step 6
+### Step 6:
 
 After running my descriptive analysis I was able to collect my findings
 
@@ -275,7 +275,7 @@ Min
 * Casual: 2
 * Member: 1
 
-### Step 7 
+### Step 7:
 
 Finally I will visualize the data through visuals from R Studio as well as Tableau .
 
