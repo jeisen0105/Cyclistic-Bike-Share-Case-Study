@@ -128,7 +128,9 @@ is.numeric(all_trips$ride_length)
 all_trips_v2 <- all_trips[!(all_trips$start_station_name == "HQ QR" | all_trips$ride_length<0),]
 ```
 
-### Step 5:
+## Analyze
+
+### Step 5: 
 
 After finishing cleaning and adding more data I was finally able to confuct a descriptive analysis.
 
@@ -244,7 +246,38 @@ all_trips_v2 %>%
 14 member        Sat               59413             974.
 ```
 
-### Findings
+### Step 6
+
+After running my descriptive analysis I was able to collect my findings
+
+#### All riders ride length (seconds)
+
+* Mean: 1190
+* Median: 539
+* Max: 10632022
+* Min: 1
+
+#### Casual vs Member ride length (seconds)
+
+Mean
+* Casual: 1393
+* Member: 795
+
+Median
+* Casual: 1393
+* Member: 508
+
+Max
+* Causal: 10632022
+* Member: 6096428
+
+Min
+* Casual: 2
+* Member: 1
+
+### Step 7 
+
+Finally I will visualize the data through visuals from R Studio as well as Tableau .
 
 
 
