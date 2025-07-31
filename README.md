@@ -38,7 +38,7 @@ Each file includes the months of January February and March but use sevieral dif
 
 When approaching the process stage its essential to purge the data ensuring accuracy and eliminating any incomplte entres. It is equally as vital to ensure consistnecy across all of the datas elements in order to analyze the data sucessfully.  
 
-## Step 1: Combine and Explore Data
+### Step 1: Combine and Explore Data
 
 I first opneed each .csv ans saved them to the appropriate subfolder in order to have a copy of the
 original data. After saving each .csv to the subfolder I imported the data and installed the necessary packages.
@@ -122,6 +122,7 @@ is.numeric(all_trips$ride_length)
 # You will create a new version of the dataframe (v2) since data is being removed
 all_trips_v2 <- all_trips[!(all_trips$start_station_name == "HQ QR" | all_trips$ride_length<0),]
 ```
+
 
 
 
