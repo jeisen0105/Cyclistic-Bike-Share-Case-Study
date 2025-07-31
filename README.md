@@ -132,6 +132,17 @@ all_trips_v2 <- all_trips[!(all_trips$start_station_name == "HQ QR" | all_trips$
 
 After finishing cleaning and adding more data I was finally able to confuct a descriptive analysis.
 
+```r
+# Descriptive analysis on ride_length 
+mean(all_trips_v2$ride_length) #straight average (total ride length / rides)
+[1] 1189.459
+median(all_trips_v2$ride_length) #midpoint number in the ascending array of ride lengths
+[1] 539
+max(all_trips_v2$ride_length) #longest ride
+[1] 10632022
+min(all_trips_v2$ride_length) #shortest ride
+[1] 1
+```
 
 
 
