@@ -38,7 +38,7 @@ Each file includes the months of January February and March but use sevieral dif
 
 When approaching the process stage its essential to purge the data ensuring accuracy and eliminating any incomplte entres. It is equally as vital to ensure consistnecy across all of the datas elements in order to analyze the data sucessfully.  
 
-### Step 1
+### Step 1:
 
 I first opneed each .csv ans saved them to the appropriate subfolder in order to have a copy of the
 original data. After saving each .csv to the subfolder I imported the data and installed the necessary packages.
@@ -55,13 +55,15 @@ conflict_prefer("filter", "dplyr")
 conflict_prefer("lag", "dplyr")
 ```
 
-### Step 2: Import Combine 
-I then uploaded the files to R Studio to clean and manipulate the data further.
+### Step 2: 
+
+I then uploaded the files to R Studio to clean the data further.
 
 ```r
 q1_2019 <- read_csv("Divvy_Trips_2019_Q1 - Divvy_Trips_2019_Q1.csv")
 q1_2020 <- read_csv("Divvy_Trips_2020_Q1 - Divvy_Trips_2020_Q1.csv")
 ```
+### Step 3:
 
 Once I had both files on R studio I was able to wrangle both into a single file by renaming the collunns and converting data types to ensure they stack correctly. After stacking the data frames I then removed any inconsistencies between the two files. 
 
@@ -94,7 +96,9 @@ all_trips <- all_trips %>%
   select(-c(start_lat, start_lng, end_lat, end_lng, birthyear, gender,  "tripduration"))
 ```
 
-I then finished cleaning and adding the data in preperation of the analysis stage. 
+### Step 4:
+
+I then cleaned and added more data to prepare for the analysis stage.
 
 ```r
 # Reassign to the desired values (using the current 2020 labels)
@@ -123,6 +127,11 @@ is.numeric(all_trips$ride_length)
 # You will create a new version of the dataframe (v2) since data is being removed
 all_trips_v2 <- all_trips[!(all_trips$start_station_name == "HQ QR" | all_trips$ride_length<0),]
 ```
+
+### Step 5:
+
+After finishing cleaning and adding more data I was finally able to confuct a descriptive analysis.
+
 
 
 
