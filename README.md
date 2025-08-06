@@ -300,7 +300,7 @@ all_trips_v2 %>%
   ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +
   geom_col(position = "dodge")
 ```
-![Average Duration by Rider Type](https://raw.githubusercontent.com/jeisen0105/Cyclistic/main/Average_Duration_by_Rider_Type.png)
+![Chart](https://raw.githubusercontent.com/jeisen0105/Cyclistic/main/Average_Duration_by_Rider_Type.png)
 
 Visualizations in R studio are useful however Tableau has more sophisticated graphics and tools that can allow us to visualize the data in a more clear light. In order to further visulize the data in Tableau we first need to create a csv file of the processed infromation from R Studio.
 
