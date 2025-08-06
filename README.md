@@ -300,7 +300,8 @@ all_trips_v2 %>%
   ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +
   geom_col(position = "dodge")
 ```
-[# of rides by rider type.pdf](https://github.com/user-attachments/files/21619950/of.rides.by.rider.type.pdf)
+[View chart PDF](https://github.com/jeisen0105/Cyclistic/blob/main/%23%20of%20rides%20by%20rider%20type.pdf)
+
 
 
 
