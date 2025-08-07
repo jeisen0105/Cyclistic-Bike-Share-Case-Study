@@ -316,7 +316,7 @@ counts <- aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_
 write.csv(counts, file = 'avg_ride_length.csv')
 write.csv(all_trips_v2, file = 'all_trips_v2.csv')
 ```
-After downloading the csv file I was able to import the data to import the data in Tableau and create calculated fields based off of existing variables in order to visualize data in a different light. This included finding the averaege ride time per ride per customer based on the day of the week as well as the minimum and maximum average ride lengths based on rider type. Below are the visualizations I made in Tableau using the csv file I just created. 
+After downloading the csv file I was able to import the data into Tableau and create calculated fields using existing variables in order to visualize data in a different light. The new calculated fields included the averaege ride time in hours per customer based on the day of the week as well as the minimum and maximum average ride lengths based on rider type. Below are the visualizations I made in Tableau using the csv file I just created. 
 
 ![Chart](Dashboard1.png)
 
