@@ -113,7 +113,7 @@ all_trips$year <- format(as.Date(all_trips$date), "%Y")
 all_trips$day_of_week <- format(as.Date(all_trips$date), "%A")
 
 # Add a "ride_length" calculation to all_trips
-all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
+all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at, units = "hours")
 
 # Inspect the structure of the columns
 str(all_trips)
@@ -132,7 +132,7 @@ all_trips_v2 <- all_trips[!(all_trips$start_station_name == "HQ QR" | all_trips$
 
 ### Step 5: 
 
-After finishing cleaning and adding more data I was finally able to confuct a descriptive analysis.
+After finishing cleaning and adding more data I was finally able to conduct a descriptive analysis.
 
 ```r
 # Descriptive analysis on ride_length 
@@ -167,6 +167,7 @@ aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = min)
   all_trips_v2$member_casual all_trips_v2$ride_length
 1                     casual                        2
 2                     member                        1
+
 # Run the average ride time by each day for members vs casual users
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN = mean)
    all_trips_v2$member_casual all_trips_v2$day_of_week
@@ -199,8 +200,10 @@ all_trips_v2$ride_length
 12                 769.4416
 13                4480.3724
 14                 711.9838
+
 # Notice that the days of the week are out of order. Let's fix that.
 all_trips_v2$day_of_week <- ordered(all_trips_v2$day_of_week, levels=c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+
 # Now, let's run the average ride time by each day for members vs casual users
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN = mean)
    all_trips_v2$member_casual all_trips_v2$day_of_week all_trips_v2$ride_length
@@ -218,6 +221,7 @@ aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$d
 12                     member                   Friday                 796.7338
 13                     casual                 Saturday                4950.7708
 14                     member                 Saturday                 974.0730
+
 # Analyze ridership data by type and weekday
 all_trips_v2 %>% 
 +   mutate(weekday = wday(started_at, label = TRUE)) %>%  #creates weekday field using wday()
@@ -312,7 +316,7 @@ counts <- aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_
 write.csv(counts, file = 'avg_ride_length.csv')
 write.csv(all_trips_v2, file = 'all_trips_v2.csv')
 ```
-Below are the visualizations I made in Tableau using the csv file I just created.
+After downloading the csv file I was able to import the data to import the data in Tableau and create calculated fields based off of existing variables in order to visualize data in a different light. This included finding the averaege ride time per ride per customer based on the day of the week as well as the minimum and maximum average ride lengths based on rider type. Below are the visualizations I made in Tableau using the csv file I just created. 
 
 ![Chart](Dashboard1.png)
 
