@@ -312,5 +312,8 @@ counts <- aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_
 write.csv(counts, file = 'avg_ride_length.csv')
 write.csv(all_trips_v2, file = 'all_trips_v2.csv')
 ```
+Below are the visualizations I made in Tableau using the csv file I just created.
+
+![Chart](Sheet3.png)
 
 ![Chart](Sheet2.png)
