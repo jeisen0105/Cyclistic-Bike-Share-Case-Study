@@ -304,16 +304,13 @@ all_trips_v2 %>%
 
 ![Chart](Rplot02.png)
 
-![Chart] (Sheet 2.png)
-
 Visualizations in R studio are useful however Tableau has more sophisticated graphics and tools that can allow us to visualize the data in a more clear light. In order to further visulize the data in Tableau we first need to create a csv file of the processed infromation from R Studio.
 
 ```r
 # Create a csv file that we will visualize in Google Slides, Tableau, and my presentation software
 counts <- aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN = mean)
 write.csv(counts, file = 'avg_ride_length.csv')
-
-![Chart](Rplot02.png)
 write.csv(all_trips_v2, file = 'all_trips_v2.csv')
 ```
 
+![Chart](Sheet2.png)
