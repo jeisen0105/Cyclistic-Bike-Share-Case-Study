@@ -264,7 +264,7 @@ After running my descriptive analysis I was able to collect my findings
 #### Casual vs Member ride length (seconds)
 
 Mean
-* Casual: 1393
+* Casual: 5373
 * Member: 795
 
 Median
@@ -329,6 +329,22 @@ Additonally I decuded to further analyze the data in Google Sheets by using the 
 ## Act
 
 ### Key Takeaways
+
+Highest Average Ride Lenghts and Total Rides By Weekday
+- Casual Riders: The highest total number of rides per weekday occurs on Saturday and Sunday with Sunday at the top. The highest average duration is Thursday followed by Friday then Sunday then Saturday.
+- Annual Riders: The highest total number of rides per weekday occurs from Monday-Friday with Tuesdays boasting the highest number. The highest Average ride lenfths occurs on Saturday followed by Sunday.
+
+Total Number of Riders
+-Casual Riders: Significant growth from 2019 Q1 - 2020 Q1 at roughly 93%.
+-Annual Riders: Rougly 11% gtowth from 2019 Q1 - 2020 Q1.
+
+Shortest to Longest Ride Length Range
+-Casual Riders: Causals ranged from roughly 0.0006 hours to 2953.34 hours
+-Annual Riders: Annuals ranged from roughly 0.0003 hours to 1693.45 hours
+
+Average Ride Length by Rider Type (Hours)
+-Casual Riders: 1.49 
+-Annual Riders: .22
 
 ### Reccomendations
 
