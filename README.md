@@ -335,16 +335,16 @@ Highest Average Ride Lenghts and Total Rides By Weekday
 - Annual Riders: The highest total number of rides per weekday occurs from Monday-Friday with Tuesdays boasting the highest number. The highest Average ride lenfths occurs on Saturday followed by Sunday.
 
 Total Number of Riders
--Casual Riders: Significant growth from 2019 Q1 - 2020 Q1 at roughly 93%.
--Annual Riders: Rougly 11% gtowth from 2019 Q1 - 2020 Q1.
+- Casual Riders: Significant growth from 2019 Q1 - 2020 Q1 at roughly 93%.
+- Annual Riders: Rougly 11% gtowth from 2019 Q1 - 2020 Q1.
 
 Shortest to Longest Ride Length Range
--Casual Riders: Causals ranged from roughly 0.0006 hours to 2953.34 hours
--Annual Riders: Annuals ranged from roughly 0.0003 hours to 1693.45 hours
+- Casual Riders: Causals ranged from roughly 0.0006 hours to 2953.34 hours
+- Annual Riders: Annuals ranged from roughly 0.0003 hours to 1693.45 hours
 
 Average Ride Length by Rider Type (Hours)
--Casual Riders: 1.49 
--Annual Riders: .22
+- Casual Riders: 1.49 
+- Annual Riders: .22
 
 ### Reccomendations
 
