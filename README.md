@@ -322,4 +322,6 @@ After downloading the csv file I was able to import the data into Tableau and cr
 
 Additonally I decuded to further analyze the data in Google Sheets by using the same CSV file used in Tableau. Using google sheets I deicded to calculate the total number of riders per year based on their Rider Type. From there I was able to calculate the percent diffirence between rider types and year on total number of rides taken.
 
+![Chart](TotalNumberofRidesPerRide-TypePerYear.png)
+
 
