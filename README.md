@@ -324,4 +324,15 @@ Additonally I decuded to further analyze the data in Google Sheets by using the 
 
 ![Chart](TotalNumberofRidesPerRide-TypePerYear.png)
 
+## Share
+
+## Act
+
+### Key Takeaways
+
+### Reccomendations
+
+### Conclusion
+
+### Outro
 
