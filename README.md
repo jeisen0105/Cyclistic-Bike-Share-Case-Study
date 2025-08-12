@@ -348,6 +348,12 @@ Average Ride Length by Rider Type (Hours)
 
 ### Reccomendations
 
+There are quite a few reccomendations to make in order to convert as many casual riders to annual riders as posssible. The first reccomendation I would like to make is to advertise on Thursday and Friday where average ride length for casual riders are at their highest. When advertising to casual riders I also reccomend that Cyclustic focus on the many bennefits of usuing an Annual Membership such as cost saving, accessability and convienience when traveling daily to work possibly through social media. In addition to these bennefits Cyclytstic can also offer additiional perks. These perks can include loyalty and reward progroms as well as member only events in order to increase incentives. 
+
+Another one of my reccomendations includes building strategic parternships with local buisnisses and organizations in otder to incrase the value of a memberships. Local Buisnessses can offer discounts to Annual members prpviding an incentive to join. Another strategic partnershup would be transit integreation. Cyclustic could partner with publiuc trsanit sysytems in order to offer a combined pass. 
+
+Finally my last reccomendation would be to use rider data to send targeted emails for casual riders that biked more than X times in a certain month. The emails could send them a personalized message letting them know how many trips they have taken and how much they could have saved with a membership. 
+
 ### Conclusion
 
 ### Outro
