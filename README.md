@@ -356,7 +356,6 @@ Finally my last reccomendation would be to use rider data to send targeted email
 
 ### Conclusion
 
-The analysis of Cyclystics bike share data from Q1 of 2019 and 2020 illustrate distiinct usage patterns between Casual and Annual membership riders. Casual riders 
+The analysis of Cyclystics bike share data from Q1 of 2019 and 2020 illustrate distiinct usage patterns between Casual and Annual membership riders. Casual riders demosntrate significamtly longer ride lengths specifically on Thursdays and Fridays and also exhibited significant growth from 2019 to 2020. To capatilize on the increase of casual rdiers I along with my team recconmend targetted marketting stragetgies that convert high usage casual riders into annual members. These strategies woul dinclude highlighting existing bennedits of annual memberships and createing new incentives. Through using data driven insights and straegic marketting Cyclistic will be able to increase their customers with annual emmeberships allowing the future growth of the company. 
 
 ### Outro
-
