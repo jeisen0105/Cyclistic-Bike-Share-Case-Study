@@ -356,5 +356,7 @@ Finally my last reccomendation would be to use rider data to send targeted email
 
 ### Conclusion
 
+The analysis of Cyclystics bike share data from Q1 of 2019 and 2020 illustrate distiinct usage patterns between Casual and Annual membership riders. Casual riders 
+
 ### Outro
 
