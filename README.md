@@ -17,7 +17,7 @@ In this project I will be examining the Cyclistic Bike Share Case Study which is
 
 ## Background
 
-Cycalistic is a bike share program in Chicago that features 5,824 bicycles and 692 docking stations across the city. What separates Cyclistic and other bike sharing companies is that they don't only have customary bicycles they also carry cyclistic bicycles. Cyclistic bicycles include reclining bikes, hand tricycles and cargo bikes. These options make bike sharing more inclusive to those with disabilities or those who can't use a standard two-wheeled bike. Cyclystics' vast array of different bicycles and stations allow citizens to travel conveniently throughout the city and with ease.
+Cycalistics is a bike share program in Chicago that features 5,824 bicycles and 692 docking stations across the city. What separates Cyclistic and other bike sharing companies is that we don't only have customary bicycles we also carry bicycles for people with disabilities. Cyclistic bicycles include reclining bikes, hand tricycles and cargo bikes. These options make bike sharing more inclusive to those with disabilities or those who can't use a standard two-wheeled bike. Cyclystics' vast array of different bicycles and stations allow citizens to travel conveniently throughout the city and with ease.
 
 In addition to offering Cyclystic bikes, Cyclystic also maintains flexibility in their pricing plans. Cyclystic offers single-ride pass, full-day pass and annual memberships illustrating the company's effort to appeal to broad consumer segments. These changes are important to implement however Cyclystics marketing director believes that by maximizing the number of annual memberships the company will succeed in the future. In order to fully understand how to maximize annual memberships, we must first differentiate between casual riders (those who use the app without a membership) and our annual members. Through analyzing what separates the two groups I can help Cyclystic design a new marketing strategy to maximize conversions of casual riders into annual members.
 
@@ -72,16 +72,16 @@ In this project I will be examining the Cyclistic Bike Share Case Study which is
 
 ## Background
 
-Cycalistic is a bike share program in Chicago that features 5,824 bicycles and 692 docking stations across the city. What separates Cyclistic and other bike sharing companies is that they don't only have customary bicycles they also carry cyclistic bicycles. Cyclistic bicycles include reclining bikes, hand tricycles and cargo bikes. These options make bike sharing more inclusive to those with disabilities or those who can't use a standard two-wheeled bike. Cyclystics' vast array of different bicycles and stations allow citizens to travel conveniently throughout the city and with ease.
+Cycalistic is a bike share program in Chicago that features 5,824 bicycles and 692 docking stations across the city. What separates Cyclistic and other bike sharing companies is that we don't only have customary bicycles we also carry inclusive bicycles. Cyclistics inclusive bicycles include reclining bikes, hand tricycles and cargo bikes. These options make bike sharing more inclusive to those with disabilities or those who can't use a standard two-wheeled bike. Cyclystics' vast array of different bicycles and stations allow citizens to travel conveniently throughout the city and with ease.
 
 In addition to offering Cyclystic bikes, Cyclystic also maintains flexibility in their pricing plans. Cyclystic offers single-ride pass, full-day pass and annual memberships illustrating the company's effort to appeal to broad consumer segments. These changes are important to implement however Cyclystics marketing director believes that by maximizing the number of annual memberships the company will succeed in the future. In order to fully understand how to maximize annual memberships, we must first differentiate between casual riders (those who use the app without a membership) and our annual members. Through analyzing what separates the two groups I can help Cyclystic design a new marketing strategy to maximize conversions of casual riders into annual members.
 
 ## Scenario
 
-In this hypothetical case study I am a junior data analyst working on the marketing analyst team at Cyclistic and will be presenting my findings as well as possible solutions to key stakeholders such as Lily Moreno the director of marketing, as well as the cyclistic executive team. My report will specifically entail a clear statement on the business task, a description of data used, documentation of cleaning or manipulation of data, a summary of analysis, supporting visualizations and my top three recommendations based on my analysis.  
+In this hypothetical case study I am a junior data analyst working on the marketing analyst team at Cyclistic and will be presenting my findings as well as possible solutions to key stakeholders such as Lily Moreno the director of marketing, as well as the Cyclistic executive team. My report will specifically entail a clear statement on the business task, a description of data used, documentation of cleaning or manipulation of data, a summary of analysis, supporting visualizations and my top three recommendations based on my analysis.  
 ## Ask
 
-When approaching the ask section it is vital to understand the business task and to consider key stakeholders. The business task or what we will be trying to solve is how annual members and casual riders use cyclistic bikes differently. After we find these differences we will then be able to explore ideas on how the company can convert the casual riders into annual members. 
+When approaching the ask section it is vital to understand the business task and to consider key stakeholders. The business task or what we will be trying to solve is how annual members and casual riders use Cyclistic bikes differently. After we find these differences we will then be able to explore ideas on how the company can convert the casual riders into annual members. 
 
 ## Prepare
 
@@ -417,7 +417,7 @@ Average Ride Length by Rider Type (Hours)
 
 ### Recommendations
 
-There are quite a few recommendations to make in order to convert as many casual riders to annual riders as possible. The first recommendation I would like to make is to advertise on Thursday and Friday where average ride length for casual riders are at their highest. When advertising to casual riders I also recommend that Cyclustic focus on the many benefits of using an Annual Membership such as cost saving, accessibility and convenience when traveling daily to work possibly through social media. In addition to these benefits Cyclystic can also offer additional perks. These perks can include loyalty and reward programs as well as member only events in order to increase incentives. 
+There are quite a few recommendations to make in order to convert as many casual riders to annual riders as possible. The first recommendation I would like to make is to advertise on Thursday and Friday where average ride length for casual riders are at their highest. When advertising to casual riders I also recommend that Cyclistic focus on the many benefits of using an Annual Membership such as cost saving, accessibility and convenience when traveling daily to work possibly through social media. In addition to these benefits Cyclystic can also offer additional perks. These perks can include loyalty and reward programs as well as member only events in order to increase incentives. 
 
 Another one of my recommendations includes building strategic partnerships with local businesses and organizations in order to increase the value of memberships. Local Businesses can offer discounts to Annual members providing an incentive to join. Another strategic partnership would be transit integration. Cyclustic could partner with public transit systems in order to offer a combined pass. 
 
@@ -428,7 +428,3 @@ Finally my last recommendation would be to use rider data to send targeted email
 The analysis of Cyclystics bike share data from Q1 of 2019 and 2020 illustrate distinct usage patterns between Casual and Annual membership riders. Casual riders demonstrate significantly longer ride lengths specifically on Thursdays and Fridays and also exhibited significant growth from 2019 to 2020. To capitalize on the increase of casual riders I along with my team recommend targeted marketing strategies that convert high usage casual riders into annual members. These strategies would include highlighting existing benefits of annual memberships and creating new incentives. Through using data driven insights and strategic marketing Cyclistic will be able to increase their customers with annual memberships allowing the future growth of the company. 
 
 ### Outro
-
-
-
-
