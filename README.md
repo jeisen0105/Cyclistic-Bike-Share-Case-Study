@@ -342,6 +342,8 @@ Additonally I decuded to further analyze the data in Google Sheets by using the 
 
 ## Share
 
+Below is a link to my Google Sheets presentatiom of the case study:
+
 [Case Study Presentation](https://docs.google.com/presentation/d/1tSAN2O-nCUPZwXn4mAo8GnBrnL4hxDB_QYoiYfrqYw8/edit?usp=sharing)
 
 ## Act
