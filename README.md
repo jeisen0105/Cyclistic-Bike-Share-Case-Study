@@ -37,7 +37,7 @@ When approaching the ask section it is vital to understand the buisness task and
 
 ### Data Source
 
-When approaching the prepare section its crtical to ensure data is reliable, original, comprehensive, current and cited. The data being used comes from Cyclistics divvy trip data pertaining to both 2019 Q1 and 2020 Q1 and has been made available by Motivate International Inc. under their [[Data License Agreement](https://divvybikes.com/data-license-agreement). Because R was used for organization and analysis only Q1 was accessable and will not containe data concerning Q2, Q3, or Q4.
+When approaching the prepare section its crtical to ensure data is reliable, original, comprehensive, current and cited. The data being used comes from Cyclistics divvy trip data pertaining to both 2019 Q1 and 2020 Q1 and has been made available by Motivate International Inc. under their [Data License Agreement](https://divvybikes.com/data-license-agreement). Because R was used for organization and analysis only Q1 was accessable and will not containe data concerning Q2, Q3, or Q4.
 
 The data is public and can be used to investigate how different customer types are using Cyclistic bikes. In in order to comply with data pprivacy issues the data excludes riders personally idneitfiable information including names or finnacial details. 
 
