@@ -16,10 +16,9 @@
 
 In this project I will be examining the Cyclistic Bike Share Case Study which is a capstone project for the Google Data Analytics Professional Certificate. I will examine this case study and address key buisness qurstions using the different steps I learned from the course including; to ask, prepare, process, analyze, share and act. 
 
-## Citations & Sources
+## Citations
 
-Source: 
-Data Visualizations:
+Source Files: 
 
 ## Background
 
