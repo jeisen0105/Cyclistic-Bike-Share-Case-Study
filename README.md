@@ -51,7 +51,61 @@ When approaching the process stage it is essential to purge the data ensuring ac
 
 ### Step 1:
 
-I first opneed each .csv ans saved them to the appropriate subfolder in order to have a copy of the
+I first opened each .csv file and saved them to the appropriate subfolder in order to have a copy of the
+original data. After saving each .csv to the subfolder I imported the data and installed the necessary packages.
+
+```r
+install.packages("tidyverse")
+library(tidyverse)  #helps wrangle data
+
+# Use the conflicted package to manage conflicts
+library(conflicted)
+
+# Set dplyr::filter and dplyr::lag as the default choices
+conflict_prefer("filter", "dplyr")
+conflict_prefer("lag", "dplyr")
+```
+
+## Introduction
+
+In this project I will be examining the Cyclistic Bike Share Case Study which is a capstone project for the Google Data Analytics Professional Certificate. I will examine this case study and address key business questions using the different steps I learned from the course including; to ask, prepare, process, analyze, share and act. 
+
+## Background
+
+Cycalistic is a bike share program in Chicago that features 5,824 bicycles and 692 docking stations across the city. What separates Cyclistic and other bike sharing companies is that they don't only have customary bicycles they also carry cyclistic bicycles. Cyclistic bicycles include reclining bikes, hand tricycles and cargo bikes. These options make bike sharing more inclusive to those with disabilities or those who can't use a standard two-wheeled bike. Cyclystics' vast array of different bicycles and stations allow citizens to travel conveniently throughout the city and with ease.
+
+In addition to offering Cyclystic bikes, Cyclystic also maintains flexibility in their pricing plans. Cyclystic offers single-ride pass, full-day pass and annual memberships illustrating the company's effort to appeal to broad consumer segments. These changes are important to implement however Cyclystics marketing director believes that by maximizing the number of annual memberships the company will succeed in the future. In order to fully understand how to maximize annual memberships, we must first differentiate between casual riders (those who use the app without a membership) and our annual members. Through analyzing what separates the two groups I can help Cyclystic design a new marketing strategy to maximize conversions of casual riders into annual members.
+
+## Scenario
+
+In this hypothetical case study I am a junior data analyst working on the marketing analyst team at Cyclistic and will be presenting my findings as well as possible solutions to key stakeholders such as Lily Moreno the director of marketing, as well as the cyclistic executive team. My report will specifically entail a clear statement on the business task, a description of data used, documentation of cleaning or manipulation of data, a summary of analysis, supporting visualizations and my top three recommendations based on my analysis.  
+## Ask
+
+When approaching the ask section it is vital to understand the business task and to consider key stakeholders. The business task or what we will be trying to solve is how annual members and casual riders use cyclistic bikes differently. After we find these differences we will then be able to explore ideas on how the company can convert the casual riders into annual members. 
+
+## Prepare
+
+### Data Source
+
+When approaching the prepare section it's critical to ensure data is reliable, original, comprehensive, current and cited. The data being used comes from Cyclistics divvy trip data pertaining to both 2019 Q1 and 2020 Q1 and has been made available by Motivate International Inc. under their [Data License Agreement](https://divvybikes.com/data-license-agreement). Because R was used for organization and analysis only Q1 was accessible and will not contain data concerning Q2, Q3, or Q4.
+
+The data is public and can be used to investigate how different customer types are using Cyclistic bikes. In order to comply with data privacy issues the data excludes riders personally identifiable information including names or financial details. 
+
+In order to determine whether or not the data source is reliable, original, comprehensive, current and cited we will follow the ROCCC framework. We know the data is reliable and original because it contains accurate, complete and unbiased information on Cyclistics historical bike trips which come from a primary source. The data also contains all information needed to understand the different ways annual and casual riders use Cyclistic bikes making it quite comprehensive. Additionally because the data sources are provided publicly by Cyclistic it can be referenced easily. Finally even though our data is 5-6 years old it is still young enough for our analysis. 
+
+### Data Information and Organization
+
+Datasets for Q1 of 2019 and 2020 were downloaded from the cloud and stored on my harddrive. They were then imported into Google Drive to examine in Google sheets and then imported to R studio for processing. After processing the data, it was finally exported to Tableau for visualization.
+
+Each file includes the months of January, February and March but uses several different column names. The different columns were edited to match each other in order to compare the two years. 
+
+## Process
+
+When approaching the process stage it is essential to purge the data ensuring accuracy and eliminating any incomplete entries. It is equally as vital to ensure consistency across all of the data's elements in order to analyze the data successfully.  
+
+### Step 1:
+
+I first opened each .csv file and saved them to the appropriate subfolder in order to have a copy of the
 original data. After saving each .csv to the subfolder I imported the data and installed the necessary packages.
 
 ```r
@@ -76,7 +130,7 @@ q1_2020 <- read_csv("Divvy_Trips_2020_Q1 - Divvy_Trips_2020_Q1.csv")
 ```
 ### Step 3:
 
-Once I had both files on R studio I was able to wrangle both into a single file by renaming the collunns and converting data types to ensure they stack correctly. After stacking the data frames I then removed any inconsistencies between the two files. 
+Once I had both files on R studio I was able to wrangle both into a single file by renaming the columns and converting data types to ensure they stack correctly. After stacking the data frames I then removed any inconsistencies between the two files. 
 
 ```r
 # Rename columns to make them consistent with q1_2020
@@ -116,7 +170,7 @@ I then cleaned and added more data to prepare for the analysis stage.
 all_trips <-  all_trips %>% 
   mutate(member_casual = recode(member_casual,"Subscriber" = "member","Customer" = "casual"))
 
-# Add columns that list the date, month, day, and year of each ride: allowing you to aggregate ride data for each moth, day or year.
+# Add columns that list the date, month, day, and year of each ride: allowing you to aggregate ride data for each month, day or year.
 all_trips$date <- as.Date(all_trips$started_at)
 all_trips$month <- format(as.Date(all_trips$date), "%m")
 all_trips$day <- format(as.Date(all_trips$date), "%d")
@@ -319,7 +373,7 @@ all_trips_v2 %>%
 
 ![Chart](Rplot02.png)
 
-Visualizations in R studio are useful however Tableau has more sophisticated graphics and tools that can allow us to visualize the data in a more clear light. In order to further visulize the data in Tableau we first need to create a csv file of the processed infromation from R Studio.
+Visualizations in R studio are useful however Tableau has more sophisticated graphics and tools that can allow us to visualize the data in a more clear light. In order to further visualize the data in Tableau we first need to create a csv file of the processed information from R Studio.
 
 ```r
 # Create a csv file that we will visualize in Google Slides, Tableau, and my presentation software
@@ -327,17 +381,17 @@ counts <- aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_
 write.csv(counts, file = 'avg_ride_length.csv')
 write.csv(all_trips_v2, file = 'all_trips_v2.csv')
 ```
-After downloading the csv file I was able to import the data into Tableau and create calculated fields using existing variables in order to visualize data in a different light. The new calculated fields included the averaege ride time in hours per customer based on the day of the week as well as the minimum and maximum average ride lengths based on rider type. Below are the visualizations I made in Tableau using the csv file I just created. 
+After downloading the csv file I was able to import the data into Tableau and create calculated fields using existing variables in order to visualize data in a different light. The new calculated fields included the average ride time in hours per customer based on the day of the week as well as the minimum and maximum average ride lengths based on rider type. Below are the visualizations I made in Tableau using the csv file I just created. 
 
 ![Chart](Dashboard1.png)
 
-Additonally I decuded to further analyze the data in Google Sheets by using the same CSV file used in Tableau. Using google sheets I deicded to calculate the total number of riders per year based on their Rider Type. From there I was able to calculate the percent diffirence between rider types and year on total number of rides taken.
+Additionally I decided to further analyze the data in Google Sheets by using the same CSV file used in Tableau. Using google sheets I decided to calculate the total number of riders per year based on their Rider Type. From there I was able to calculate the percent difference between rider types and year on the total number of rides taken.
 
 ![Chart](TotalNumberofRidesPerRide-TypePerYear.png)
 
 ## Share
 
-Below is a link to my Google Sheets presentatiom of the case study:
+Below is a link to my Google Sheets presentation of the case study:
 
 [Case Study Presentation](https://docs.google.com/presentation/d/1tSAN2O-nCUPZwXn4mAo8GnBrnL4hxDB_QYoiYfrqYw8/edit?usp=sharing)
 
@@ -345,13 +399,13 @@ Below is a link to my Google Sheets presentatiom of the case study:
 
 ### Key Takeaways
 
-Highest Average Ride Lenghts and Total Rides By Weekday
+Highest Average Ride Lengths and Total Rides By Weekday
 - Casual Riders: The highest total number of rides per weekday occurs on Saturday and Sunday with Sunday at the top. The highest average duration is Thursday followed by Friday then Sunday then Saturday.
-- Annual Riders: The highest total number of rides per weekday occurs from Monday-Friday with Tuesdays boasting the highest number. The highest Average ride lenfths occurs on Saturday followed by Sunday.
+- Annual Riders: The highest total number of rides per weekday occurs from Monday-Friday with Tuesdays boasting the highest number. The highest Average ride length occurs on Saturday followed by Sunday.
 
 Total Number of Riders
 - Casual Riders: Significant growth from 2019 Q1 - 2020 Q1 at roughly 93%.
-- Annual Riders: Rougly 11% gtowth from 2019 Q1 - 2020 Q1.
+- Annual Riders: Roughy 11% growth from 2019 Q1 - 2020 Q1.
 
 Shortest to Longest Ride Length Range
 - Casual Riders: Causals ranged from roughly 0.0006 hours to 2953.34 hours
@@ -361,16 +415,20 @@ Average Ride Length by Rider Type (Hours)
 - Casual Riders: 1.49 
 - Annual Riders: .22
 
-### Reccomendations
+### Recommendations
 
-There are quite a few reccomendations to make in order to convert as many casual riders to annual riders as posssible. The first reccomendation I would like to make is to advertise on Thursday and Friday where average ride length for casual riders are at their highest. When advertising to casual riders I also reccomend that Cyclustic focus on the many bennefits of usuing an Annual Membership such as cost saving, accessability and convienience when traveling daily to work possibly through social media. In addition to these bennefits Cyclytstic can also offer additiional perks. These perks can include loyalty and reward progroms as well as member only events in order to increase incentives. 
+There are quite a few recommendations to make in order to convert as many casual riders to annual riders as possible. The first recommendation I would like to make is to advertise on Thursday and Friday where average ride length for casual riders are at their highest. When advertising to casual riders I also recommend that Cyclustic focus on the many benefits of using an Annual Membership such as cost saving, accessibility and convenience when traveling daily to work possibly through social media. In addition to these benefits Cyclystic can also offer additional perks. These perks can include loyalty and reward programs as well as member only events in order to increase incentives. 
 
-Another one of my reccomendations includes building strategic parternships with local buisnisses and organizations in otder to incrase the value of a memberships. Local Buisnessses can offer discounts to Annual members prpviding an incentive to join. Another strategic partnershup would be transit integreation. Cyclustic could partner with publiuc trsanit sysytems in order to offer a combined pass. 
+Another one of my recommendations includes building strategic partnerships with local businesses and organizations in order to increase the value of memberships. Local Businesses can offer discounts to Annual members providing an incentive to join. Another strategic partnership would be transit integration. Cyclustic could partner with public transit systems in order to offer a combined pass. 
 
-Finally my last reccomendation would be to use rider data to send targeted emails for casual riders that biked more than X times in a certain month. The emails could send them a personalized message letting them know how many trips they have taken and how much they could have saved with a membership. 
+Finally my last recommendation would be to use rider data to send targeted emails for casual riders that biked more than X times in a certain month. The emails could send them a personalized message letting them know how many trips they have taken and how much they could have saved with a membership. 
 
 ### Conclusion
 
-The analysis of Cyclystics bike share data from Q1 of 2019 and 2020 illustrate distiinct usage patterns between Casual and Annual membership riders. Casual riders demosntrate significamtly longer ride lengths specifically on Thursdays and Fridays and also exhibited significant growth from 2019 to 2020. To capatilize on the increase of casual rdiers I along with my team recconmend targetted marketting stragetgies that convert high usage casual riders into annual members. These strategies woul dinclude highlighting existing bennedits of annual memberships and createing new incentives. Through using data driven insights and straegic marketting Cyclistic will be able to increase their customers with annual emmeberships allowing the future growth of the company. 
+The analysis of Cyclystics bike share data from Q1 of 2019 and 2020 illustrate distinct usage patterns between Casual and Annual membership riders. Casual riders demonstrate significantly longer ride lengths specifically on Thursdays and Fridays and also exhibited significant growth from 2019 to 2020. To capitalize on the increase of casual riders I along with my team recommend targeted marketing strategies that convert high usage casual riders into annual members. These strategies would include highlighting existing benefits of annual memberships and creating new incentives. Through using data driven insights and strategic marketing Cyclistic will be able to increase their customers with annual memberships allowing the future growth of the company. 
 
 ### Outro
+
+
+
+
