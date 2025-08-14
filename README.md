@@ -18,6 +18,9 @@ In this project I will be examining the Cyclistic Bike Share Case Study which is
 
 ## Citations & Sources
 
+Source: 
+Data Visualizations:
+
 ## Background
 
 Cycalistic is a bike share program in Chicago that features 5,824 bicycles and 692 docking stations across the city. What separates Cyclistic and other bike sharing companies is that they don't only have customary bicycles they also carry cyclistic bicycles. Cyclystic biscycles include reclining bikes, hand tricycles and cargo bikes. These options make bike sharing more inclusive to those with disabilities or those who can't use a standard two-wheeled bike. Cyclystics' vast array of different bicycles and stations allow citizens to travel conveniently throughout the city and with ease.
@@ -338,6 +341,8 @@ Additonally I decuded to further analyze the data in Google Sheets by using the 
 ![Chart](TotalNumberofRidesPerRide-TypePerYear.png)
 
 ## Share
+
+[Case Study Presentation](https://docs.google.com/presentation/d/1tSAN2O-nCUPZwXn4mAo8GnBrnL4hxDB_QYoiYfrqYw8/edit?usp=sharing)
 
 ## Act
 
