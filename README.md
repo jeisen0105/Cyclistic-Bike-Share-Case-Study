@@ -1,8 +1,22 @@
-# Cyclistic
+# Case Study: Google Data Analytics Cyclystic Bike-Share Analysis
+
+### Table of Contents
+* Introduction
+* Citations & Sources
+* Background
+* Scenario
+* Ask
+* Prepare
+* Process
+* Analyze
+* Share
+* Act
 
 ## Introduction
 
 In this project I will be examining the Cyclistic Bike Share Case Study which is a capstone project for the Google Data Analytics Professional Certificate. I will examine this case study and address key buisness qurstions using the different steps I learned from the course including; to ask, prepare, process, analyze, share and act. 
+
+## Citations & Sources
 
 ## Background
 
@@ -13,7 +27,6 @@ In addition to offering Cyclystic bikes, Cyclystic also maintains flexibility in
 ## Scenario
 
 In this hypothetical case study I am a junior data analyst wokring on the marketing analyst team at Cyclistic and will be presentiing my findings as well as possible solutions to key stakeholders such as Lily Moreno the director of marketting, as well as the cyclistic executive team. My report will specifically entail a clear statment on the buisness task, a descruption of data used, documentation of cleaning or manipulation of data, a summary of analysis, supporting vizualizations and my top three reccomendations based on my analysis.  
-
 ## Ask
 
 When approaching the ask section it is vital to understand the buisness task and to consider key stakeholders. The buisness task or what we will be trying to solve is how annual members and casual riders use ciclystic bikes differentky. After we find these differences we will then be able to explore ideas on how the company can covert the casual riders into annual members. 
