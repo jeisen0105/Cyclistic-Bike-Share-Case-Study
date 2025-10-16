@@ -1,4 +1,4 @@
-# Case Study: Google Data Analytics Cyclistic Bike-Share Analysis
+# Case Study: Cyclistic Bike-Share Analysis (Google Data Analytics Capstone)
 
 ### Table of Contents
 * Introduction
@@ -13,29 +13,31 @@
 
 ## Introduction
 
-This project analyzes the Cyclistic Bike Share case study, a capstone project from the Google Data Analytics Professional Certificate. I will address key business questions using the six-step data analysis process: Ask, Prepare, Process, Analyze, Share, and Act. 
+This project presents an analysis of the Cyclistic Bike-Share case study, part of the Google Data Analytics Professional Certificate capstone. The goal is to address key business questions using the six-step data analysis process: Ask, Prepare, Process, Analyze, Share, and Act. 
 
 ## Background
 
-Cyclistic is a bike share program in Chicago that features 5,824 bicycles and 692 docking stations across the city. What separates Cyclistic and other bike sharing companies is that they don't only have standard bicycles they also carry bicycles for people with disabilities. Cyclistic bicycles include reclining bikes, hand tricycles and cargo bikes. These options make bike sharing more accessible and inclusive for individuals with disabilities or those unable to use a standard two-wheeled bike. Cyclistic's vast array of different bicycles and stations allow citizens to travel conveniently throughout the city and with ease.
+Cyclistic is a bike-share program based in Chicago, featuring 5,824 bicycles and 692 docking stations across the city. Unlike other bike-share companies, Cyclistic offers a range of bicycles, including those designed for people with disabilities—such as reclining bikes, hand tricycles, and cargo bikes—making the service more inclusive and accessible.
 
-In addition to offering Cyclistic bikes, Cyclistic also maintains flexibility in their pricing plans. Cyclistic offers single-ride pass, full-day pass and annual memberships illustrating the company's effort to appeal to broad target audiences. These changes were important to implement. However, Cyclistic's marketing director believes that by maximizing the number of annual memberships the company will succeed in the future. In order to fully understand how to maximize annual memberships, we must first differentiate between casual riders (those who use the app without a membership) and our annual members. Through analyzing what separates the two groups I can help Cyclistic design a new marketing strategy to maximize conversions of casual riders into annual members.
+Cyclistic also provides flexible pricing options: single-ride passes, full-day passes, and annual memberships, allowing it to appeal to a broad range of users. However, the company’s marketing director believes future success lies in increasing the number of annual memberships.
+
+To support this goal, we must analyze how casual riders (non-members) differ from annual members in their usage patterns. These insights will help inform a targeted marketing strategy aimed at increasing annual memberships.
 
 ## Scenario
 
-In this hypothetical case study I am working as a junior data analyst working on the marketing analyst team at Cyclistic and will be presenting my findings as well as possible solutions to key stakeholders such as Lily Moreno the director of marketing, as well as the Cyclistic executive team. 
+In this hypothetical scenario, I am a junior data analyst on Cyclistic’s marketing analytics team. I will present my findings and recommendations to key stakeholders, including Lily Moreno (Marketing Director) and the executive team.
 
-My report will specifically entail a clear statement on the business task, a description of data used, documentation of cleaning or manipulation of data, a summary of analysis, supporting visualizations and my top recommendations based on the analysis.  
+This report includes a clear business task, a description of the dataset, documentation of cleaning and transformation processes, a summary of analysis and visualizations, and actionable recommendations.
  
 ## Ask
 
-When approaching the ask section it is vital to understand the business task and to consider key stakeholders. The business task is to determine how annual members and casual riders use Cyclistic bikes differently, and how casual riders can be encouraged to become annual members. After I find these differences I will then be able to explore ideas on how the company can convert the casual riders into annual members.
+The key business task is to analyze how annual members and casual riders use Cyclistic bikes differently, and identify ways to encourage casual riders to become annual members.
 
 ## Prepare
 
 ### Data Source
 
-When approaching the prepare section it's critical to ensure data is reliable, original, comprehensive, current and cited. The data being used comes from Cyclistic's divvy trip data pertaining to both 2019 Q1 and 2020 Q1 and has been made available by Motivate International Inc. under their [Data License Agreement](https://divvybikes.com/data-license-agreement). Because R was used for organization and analysis only Q1 was accessible and will not contain data concerning Q2, Q3, or Q4.
+When approaching the prepare section it's critical to ensure data is reliable, original, comprehensive, current and cited. The data being used comes from Cyclistic's divvy trip data pertaining to both 2019 Q1 and 2020 Q1 and has been made available by Motivate International Inc. under their [Data License Agreement](https://divvybikes.com/data-license-agreement). Because R was used for analysis, only Q1 data was used due to size and format limitations.
 
 The data is public and can be used to investigate how different customer types are using Cyclistic bikes. In order to comply with data privacy issues the data excludes riders personally identifiable information including names or financial details. 
 
@@ -49,7 +51,7 @@ Each file includes the months of January, February and March but uses several di
 
 ## Process
 
-When approaching the process stage it is essential to purge the data ensuring accuracy and eliminating any incomplete entries. It is equally as vital to ensure consistency across all of the data's elements in order to analyze the data successfully.  
+The processing stage involves cleaning and transforming the data to ensure accuracy, consistency, and readiness for analysis. This includes removing incomplete or innaccurate entries and aligning column names across datasets.
 
 ### Step 1:
 
@@ -264,7 +266,7 @@ all_trips_v2 %>%
 
 ### Step 6:
 
-After running my descriptive analysis I was able to collect my findings
+The descriptive analysis revealed the following key metrics:
 
 #### All riders ride length (seconds)
 
@@ -338,7 +340,7 @@ Additionally I decided to further analyze the data in Google Sheets by using the
 
 ## Share
 
-Below is a link to my Google Slides presentation of the case study:
+A visual summary of my analysis and findings is available in this Google Slides presentation:
 
 [Case Study Presentation](https://docs.google.com/presentation/d/1tSAN2O-nCUPZwXn4mAo8GnBrnL4hxDB_QYoiYfrqYw8/edit?usp=sharing)
 
@@ -355,16 +357,16 @@ Total Number of Riders
 - Annual Riders: Roughly 11% growth from 2019 Q1 - 2020 Q1.
 
 Shortest to Longest Ride Length Range
-- Casual Riders: Casuals ranged from roughly 0.0006 seconds to 2953.34 seconds
-- Annual Riders: Annuals ranged from roughly 0.0003 seconds to 1693.45 seconds
+- Casual Riders: Casuals ranged from roughly 0.0006 seconds to 2,953.34 seconds
+- Annual Riders: Annuals ranged from roughly 0.0003 seconds to 1,693.45 seconds
 
 Average Ride Length by Rider Type (Seconds)
-- Casual Riders: 5373 
+- Casual Riders: 5,373 
 - Annual Riders: 795
 
 ### Recommendations
 
-There are quite a few recommendations to make in order to convert as many casual riders to annual riders as possible. The first recommendation I would like to make is to advertise on Thursday and Friday where average ride length for casual riders are at their highest. When advertising to casual riders I also recommend that Cyclistic focus on the many benefits of using an Annual Membership such as cost saving, accessibility and convenience when traveling daily to work possibly through social media. In addition to these benefits Cyclistic can also offer additional perks. These perks can include loyalty and reward programs as well as member only events in order to increase incentives. 
+There are quite a few recommendations to make in order to convert as many casual riders to annual riders as possible. I recommend focusing advertisements on Thursdays and Fridays, when casual riders exhibit the longest average ride durations. When advertising to casual riders I also recommend that Cyclistic focus on the many benefits of using an Annual Membership such as cost saving, accessibility and convenience when traveling daily to work possibly through social media. In addition to these benefits Cyclistic can also offer additional perks. These perks can include loyalty and reward programs as well as member only events in order to increase incentives. 
 
 Another one of my recommendations includes building strategic partnerships with local businesses and organizations in order to increase the value of memberships. Local Businesses can offer discounts to Annual members providing an incentive to join. Another strategic partnership would be transit integration. Cyclistic could partner with public transit systems in order to offer a combined pass. 
 
@@ -372,6 +374,6 @@ Finally my last recommendation would be to use rider data to send targeted email
 
 ### Conclusion
 
-The analysis of Cyclistic's bike share data from Q1 of 2019 and 2020 illustrate distinct usage patterns between Casual and Annual membership riders. Casual riders demonstrate significantly longer ride lengths specifically on Thursdays and Fridays and also exhibited significant growth from 2019 to 2020. To capitalize on the increase of casual riders I along with my team recommend targeted marketing strategies that convert high usage casual riders into annual members. These strategies would include highlighting existing benefits of annual memberships and creating new incentives. Through using data driven insights and strategic marketing Cyclistic will be able to increase their customers with annual memberships allowing the future growth of the company. 
+The analysis of Cyclistic's bike share data from Q1 of 2019 and 2020 illustrate distinct usage patterns between Casual and Annual membership riders. Casual riders demonstrate significantly longer ride lengths specifically on Thursdays and Fridays and also exhibited significant growth from 2019 to 2020. To capitalize on the growth of casual riders, my team and I recommend targeted strategies to convert them into annual members. These strategies would include highlighting existing benefits of annual memberships and creating new incentives. Through using data driven insights and strategic marketing Cyclistic will be able to increase their customers with annual memberships allowing the future growth of the company. 
 
 
