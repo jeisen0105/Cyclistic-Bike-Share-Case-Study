@@ -1,4 +1,4 @@
-# Case Study: Google Data Analytics Cyclystic Bike-Share Analysis
+# Case Study: Google Data Analytics Cyclistic Bike-Share Analysis
 
 ### Table of Contents
 * Introduction
@@ -13,21 +13,23 @@
 
 ## Introduction
 
-In this project I will be examining the Cyclistic Bike Share Case Study which is a capstone project for the Google Data Analytics Professional Certificate. I will examine this case study and address key business questions using the different steps I learned from the course including; to ask, prepare, process, analyze, share and act.  
+This project analyzes the Cyclistic Bike Share case study, a capstone project from the Google Data Analytics Professional Certificate. I will address key business questions using the six-step data analysis process: Ask, Prepare, Process, Analyze, Share, and Act. 
 
 ## Background
 
-Cyclistic is a bike share program in Chicago that features 5,824 bicycles and 692 docking stations across the city. What separates Cyclistic and other bike sharing companies is that they don't only have customary bicycles they also carry bicycles for people with disabilities. Cyclistic bicycles include reclining bikes, hand tricycles and cargo bikes. These options make bike sharing more inclusive to those with disabilities or those who can't use a standard two-wheeled bike. Cyclistic's vast array of different bicycles and stations allow citizens to travel conveniently throughout the city and with ease.
+Cyclistic is a bike share program in Chicago that features 5,824 bicycles and 692 docking stations across the city. What separates Cyclistic and other bike sharing companies is that they don't only have standard bicycles they also carry bicycles for people with disabilities. Cyclistic bicycles include reclining bikes, hand tricycles and cargo bikes. These options make bike sharing more accessible and inclusive for individuals with disabilities or those unable to use a standard two-wheeled bike. Cyclistic's vast array of different bicycles and stations allow citizens to travel conveniently throughout the city and with ease.
 
-In addition to offering Cyclistic bikes, Cyclistic also maintains flexibility in their pricing plans. Cyclistic offers single-ride pass, full-day pass and annual memberships illustrating the company's effort to appeal to broad target audiences. These changes were important to implement however Cyclistic's marketing director believes that by maximizing the number of annual memberships the company will succeed in the future. In order to fully understand how to maximize annual memberships, we must first differentiate between casual riders (those who use the app without a membership) and our annual members. Through analyzing what separates the two groups I can help Cyclistic design a new marketing strategy to maximize conversions of casual riders into annual members.
+In addition to offering Cyclistic bikes, Cyclistic also maintains flexibility in their pricing plans. Cyclistic offers single-ride pass, full-day pass and annual memberships illustrating the company's effort to appeal to broad target audiences. These changes were important to implement. However, Cyclistic's marketing director believes that by maximizing the number of annual memberships the company will succeed in the future. In order to fully understand how to maximize annual memberships, we must first differentiate between casual riders (those who use the app without a membership) and our annual members. Through analyzing what separates the two groups I can help Cyclistic design a new marketing strategy to maximize conversions of casual riders into annual members.
 
 ## Scenario
 
-In this hypothetical case study I am working as a junior data analyst working on the marketing analyst team at Cyclistic and will be presenting my findings as well as possible solutions to key stakeholders such as Lily Moreno the director of marketing, as well as the Cyclistic executive team. My report will specifically entail a clear statement on the business task, a description of data used, documentation of cleaning or manipulation of data, a summary of analysis, supporting visualizations and my top recommendations based on the analysis.  
+In this hypothetical case study I am working as a junior data analyst working on the marketing analyst team at Cyclistic and will be presenting my findings as well as possible solutions to key stakeholders such as Lily Moreno the director of marketing, as well as the Cyclistic executive team. 
+
+My report will specifically entail a clear statement on the business task, a description of data used, documentation of cleaning or manipulation of data, a summary of analysis, supporting visualizations and my top recommendations based on the analysis.  
  
 ## Ask
 
-When approaching the ask section it is vital to understand the business task and to consider key stakeholders. The business task or what I will be trying to solve is how annual members and casual riders use Cyclistic bikes differently. After I find these differences I will then be able to explore ideas on how the company can convert the casual riders into annual members.
+When approaching the ask section it is vital to understand the business task and to consider key stakeholders. The business task is to determine how annual members and casual riders use Cyclistic bikes differently, and how casual riders can be encouraged to become annual members. After I find these differences I will then be able to explore ideas on how the company can convert the casual riders into annual members.
 
 ## Prepare
 
@@ -41,7 +43,7 @@ In order to determine whether or not the data source is reliable, original, comp
 
 ### Data Information and Organization
 
-Datasets for Q1 of 2019 and 2020 were downloaded from the cloud and stored on my harddrive. They were then imported into Google Drive to examine in Google sheets and then imported to R studio for processing. After processing the data, it was finally exported to Tableau for visualization.
+Datasets for Q1 of 2019 and 2020 were downloaded from the cloud and stored on my hard drive. They were then imported into Google Drive to examine in Google Sheets and then imported to RStudio for processing. After processing the data, it was finally exported to Tableau for visualization.
 
 Each file includes the months of January, February and March but uses several different column names. The different columns were edited to match each other in order to compare the two years. 
 
@@ -128,13 +130,13 @@ all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
 # Inspect the structure of the columns
 str(all_trips)
 
-# Convert "ride_length" from Factor to numeric
+# Convert "ride_length" from Factor to numeric 
 is.factor(all_trips$ride_length)
 all_trips$ride_length <- as.numeric(as.character(all_trips$ride_length))
 is.numeric(all_trips$ride_length)
 
 # Remove "bad" data, the dataframe includes a few hundred entries when bikes were taken out of docks and checked for quality by Divvy or ride_length was negative
-# You will create a new version of the dataframe (v2) since data is being removed
+# You neeed to create a new version of the dataframe (v2) since data is being removed
 all_trips_v2 <- all_trips[!(all_trips$start_station_name == "HQ QR" | all_trips$ride_length<0),]
 ```
 
@@ -353,12 +355,12 @@ Total Number of Riders
 - Annual Riders: Roughly 11% growth from 2019 Q1 - 2020 Q1.
 
 Shortest to Longest Ride Length Range
-- Casual Riders: Casuals ranged from roughly 0.0006 hours to 2953.34 hours
-- Annual Riders: Annuals ranged from roughly 0.0003 hours to 1693.45 hours
+- Casual Riders: Casuals ranged from roughly 0.0006 seconds to 2953.34 seconds
+- Annual Riders: Annuals ranged from roughly 0.0003 seconds to 1693.45 seconds
 
-Average Ride Length by Rider Type (Hours)
-- Casual Riders: 1.49 
-- Annual Riders: .22
+Average Ride Length by Rider Type (Seconds)
+- Casual Riders: 5373 
+- Annual Riders: 795
 
 ### Recommendations
 
