@@ -133,9 +133,7 @@ all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
 str(all_trips)
 
 # Convert "ride_length" from Factor to numeric 
-is.factor(all_trips$ride_length)
 all_trips$ride_length <- as.numeric(as.character(all_trips$ride_length))
-is.numeric(all_trips$ride_length)
 
 # Remove "bad" data, the dataframe includes a few hundred entries when bikes were taken out of docks and checked for quality by Divvy or ride_length was negative
 # You neeed to create a new version of the dataframe (v2) since data is being removed
