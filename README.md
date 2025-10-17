@@ -43,22 +43,12 @@ The data is public and can be used to investigate how different customer types a
 
 In order to determine whether or not the data source is reliable, original, comprehensive, current and cited I will follow the ROCCC framework. I know the data is reliable and original because it contains accurate, complete and unbiased information on Cyclistic's historical bike trips which come from a primary source. The data also contains all information needed to understand the different ways annual and casual riders use Cyclistic bikes making it quite comprehensive. Additionally because the data sources are provided publicly by Cyclistic it can be referenced easily. Finally even though our data is 5 to 6 years old it is still young enough for our analysis. 
 
-### Data Information and Organization
-
-Datasets for Q1 of 2019 and 2020 were downloaded from the cloud and stored on my hard drive. They were then imported into Google Drive to examine in Google Sheets and then imported to RStudio for processing. After processing the data, it was finally exported to Tableau for visualization.
-
-Each file includes the months of January, February and March but uses several different column names. The different columns were edited to match each other in order to compare the two years. 
-
-## Process
-
-The processing stage involves cleaning and transforming the data to ensure accuracy, consistency, and readiness for analysis. This includes removing incomplete or innaccurate entries and aligning column names across datasets.
-
-### Step 1:
 
 I first opened each .csv file and saved them to the appropriate subfolder in order to have a copy of the
 original data. After saving each .csv to the subfolder I imported the data and installed the necessary packages.
 
 ```r
+#Install necessary packages
 install.packages("tidyverse")
 install.packages("conflicted")
 library(tidyverse) 
@@ -69,20 +59,29 @@ conflict_prefer("filter", "dplyr")
 conflict_prefer("lag", "dplyr")
 ```
 
-### Step 2: 
-
 I then uploaded the files to R Studio to clean the data further.
 
 ```r
 q1_2019 <- read_csv("Divvy_Trips_2019_Q1 - Divvy_Trips_2019_Q1.csv")
 q1_2020 <- read_csv("Divvy_Trips_2020_Q1 - Divvy_Trips_2020_Q1.csv")
 ```
-### Step 3:
 
-Once I had both files on R studio I was able to wrangle both into a single file by renaming the columns and converting data types to ensure they stack correctly. After stacking the data frames I then removed any inconsistencies between the two files. 
+
+### Data Information and Organization
+
+Datasets for Q1 of 2019 and 2020 were downloaded from the cloud and stored on my hard drive. They were then imported into Google Drive to examine in Google Sheets and then imported to RStudio for processing. After processing the data, it was finally exported to Tableau for visualization.
+
+Each file includes the months of January, February and March but uses several different column names. The different columns were edited to match each other in order to compare the two years. 
+
+## Process
+
+The processing stage involves cleaning and transforming the data to ensure accuracy, consistency, and readiness for analysis. This includes removing incomplete or innaccurate entries and aligning column names/data types across datasets.
+
+
+The column names in the 2019 data were renamed to match the 2020 schema, and the ride_id and rideable_type columns were explicitly converted to the character data type to allow for correct stacking  
 
 ```r
-# Rename columns to make them consistent with q1_2020
+#Rename columns to make them consistent with q1_2020
 (q1_2019 <- rename(q1_2019
                    ,ride_id = trip_id
                    ,rideable_type = bikeid
@@ -94,60 +93,60 @@ Once I had both files on R studio I was able to wrangle both into a single file 
                    ,end_station_id = to_station_id
                    ,member_casual = usertype))
 
-# Inspect the dataframes and look for incongruencies
-str(q1_2019)
-str(q1_2020)
-
-# Convert ride_id and rideable_type to character so that they can stack correctly
+#Convert ride_id and rideable_type to character so that they can stack correctly
 q1_2019 <-  mutate(q1_2019, ride_id = as.character(ride_id)
-                   ,rideable_type = as.character(rideable_type)) 
+                   ,rideable_type = as.character(rideable_type))
+```
 
-# Stack individual quarter's data frames into one big data frame
+The cleaned quarterly data frames were combined into a single master data frame, all_trips.
+
+```r
+#Stack individual quarter's data frames into one big data frame
 all_trips <- bind_rows(q1_2019, q1_2020)
+```
 
-# Remove lat, long, birthyear, and gender fields as this data was dropped beginning in 2020
+The 2019 user type labels ("Subscriber" and "Customer") were standardized to match the 2020 labels ("member" and "casual") using the recode() function. Unnecessary columns (like birthyear, gender, and specific station coordinates) that were dropped from the public data in 2020 were removed for consistency.
+
+```r
+#Standardize user type labels
+all_trips <-  all_trips %>% 
+  mutate(member_casual = recode(member_casual,"Subscriber" = "member","Customer" = "casual"))
+
+#Remove non essential columns
 all_trips <- all_trips %>%  
   select(-c(start_lat, start_lng, end_lat, end_lng, birthyear, gender, tripduration))
 ```
 
-### Step 4:
-
-I then cleaned and added more data to prepare for the analysis stage.
+New columns were created to extract granular time data (month, day, year, day-of-week) from the started_at timestamp, and the ride_length column was calculated by finding the difference between the end and start times. The data type for the ride_length column is also converted to numeric. 
 
 ```r
-# Reassign to the desired values (using the 2020 labels)
-all_trips <-  all_trips %>% 
-  mutate(member_casual = recode(member_casual,"Subscriber" = "member","Customer" = "casual"))
-
-# Add columns that list the date, month, day, and year of each ride: allowing you to aggregate ride data for each month, day or year.
+#Add columns that list the date, month, day, and year of each ride
 all_trips$date <- as.Date(all_trips$started_at)
 all_trips$month <- format(as.Date(all_trips$date), "%m")
 all_trips$day <- format(as.Date(all_trips$date), "%d")
 all_trips$year <- format(as.Date(all_trips$date), "%Y")
 all_trips$day_of_week <- format(as.Date(all_trips$date), "%A")
 
-# Add a "ride_length" calculation to all_trips
+#Add a "ride_length" calculation to all_trips
 all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
 
-# Inspect the structure of the columns
-str(all_trips)
-
-# Convert "ride_length" from Factor to numeric 
+#Convert "ride_length" from Factor to numeric 
 all_trips$ride_length <- as.numeric(as.character(all_trips$ride_length))
+```
 
-# Remove "bad" data, the dataframe includes a few hundred entries when bikes were taken out of docks and checked for quality by Divvy or ride_length was negative
-# You neeed to create a new version of the dataframe (v2) since data is being removed
+After noticing that the ride_length column contains negative values and the start_station_name column contains invalid entries a new dataframe is created to filter out these invalid entries. 
+
+```r
+# Create a new version of the dataframe (v2) since data is being removed
 all_trips_v2 <- all_trips[!(all_trips$start_station_name == "HQ QR" | all_trips$ride_length<0),]
 ```
 
 ## Analyze
 
-### Step 5: 
-
 After finishing cleaning and adding more data I was finally able to conduct a descriptive analysis.
 
 ```r
-# Descriptive analysis on ride_length 
+#Descriptive analysis on ride_length 
 mean(all_trips_v2$ride_length) #straight average (total ride length / rides)
 [1] 1189.459
 median(all_trips_v2$ride_length) #midpoint number in the ascending array of ride lengths
@@ -157,12 +156,7 @@ max(all_trips_v2$ride_length) #longest ride
 min(all_trips_v2$ride_length) #shortest ride
 [1] 1
 
-# You can condense the four lines above to one line using summary() on the specific attribute
-summary(all_trips_v2$ride_length)
-    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-       1      331      539     1190      912 10632022 
-
-# Compare members and casual users
+#Descriptive Analysis on ride length for members and casual users
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = mean)
   all_trips_v2$member_casual all_trips_v2$ride_length
 1                     casual                5372.7839
@@ -180,7 +174,7 @@ aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = min)
 1                     casual                        2
 2                     member                        1
 
-# Run the average ride time by each day for members vs casual users
+#Average ride length for memebrs and casual users depedning on weekday
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN = mean)
    all_trips_v2$member_casual all_trips_v2$day_of_week
 1                      casual                   Friday
@@ -213,10 +207,10 @@ all_trips_v2$ride_length
 13                4480.3724
 14                 711.9838
 
-# Notice that the days of the week are out of order. Let's fix that.
+#Order the days of the week
 all_trips_v2$day_of_week <- ordered(all_trips_v2$day_of_week, levels=c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
 
-# Now, let's run the average ride time by each day for members vs casual users
+# Now, let's run the average ride time by each day in order for members vs casual users
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN = mean)
    all_trips_v2$member_casual all_trips_v2$day_of_week all_trips_v2$ride_length
 1                      casual                   Sunday                5061.3044
